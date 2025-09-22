@@ -11,6 +11,9 @@ body {
   background: #080808;
   color: white;
 }
+.container img{
+  width: 500px;
+}
 #profile {
   width: 450px;
   height: 450px;
