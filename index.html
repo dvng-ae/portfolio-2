@@ -8,17 +8,17 @@
   <script src="https://kit.fontawesome.com/a9706ff05b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <img id="profile" src="/profile.jpg" alt="profile">
+  <img id="profile" src="./profile.jpg" alt="profile">
   <div id="header">
     <div class="container">
       <nav>
         <img src="" alt="logo" class="logo">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="header-text">
@@ -33,7 +33,7 @@
     <div class="container">
       <div class="rows">
         <div class="left">
-          <img src="/2nd pic.jpeg.jpg" alt="about-img">
+          <img src="./2nd pic.jpg" alt="about-img">
         </div>
         <div class="right">
           <h1 class="sub-title">About Me</h1>
@@ -105,17 +105,47 @@
         <div class="work">
           <img src="./website1.jpg" alt="pic">
           <div class="layer">
-            <h3>Web Design</h3>
+            <h3>Web page</h3>
             <p>A dedicated page providing notes, resources, and 
               helpful study materials to support college students in their learning journey.</p>
             <a href="#"><i class="fa-solid fa-link"></i></a>
           </div>
         </div>
       </div>
-      <a href="#" class="btn">See more</a>
+      <a href="https://kuc-it-dept.github.io/FYIMP/" class="btn">See more</a>
     </div>
   </div>
-
+<!----------------contact---------------------->
+<div id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="contact-left">
+        <h1 class="sub-title">Contact Me</h1>
+        <p>
+          <i class="fa-solid fa-paper-plane"></i>contact@example.com
+        </p>
+        <p>
+          <i class="fa-solid fa-phone"></i>0123456789
+        </p>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <a href="#" download class="btn btn2">Download CV</a>
+      </div>
+      <div class="contact-right">
+        <form name="submit-to-google-sheet">
+          <input type="text" name="Name" placeholder="Your Name" required />
+          <input type="email" name="Email" placeholder="Your Email" required />
+          <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn btn2" onclick="showAlert()">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
   <script>
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
@@ -131,5 +161,22 @@
       document.getElementById(tabname).classList.add("active-tab");
     }
   </script>
+  <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbw63L-yLWogiZan3KmAZkUEykWFSk-Xh_g7FTICxjnGwbm7o--CqWNKQPOu678NlW1YqQ/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+<script>
+  function showAlert() {
+    alert("Submitted");
+  }
+</script>
+</script>
 </body>
 </html>
